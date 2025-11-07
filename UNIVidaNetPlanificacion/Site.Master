@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UNIVidaNetPlanificacion.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - UNIVidaNetPlanificacion</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body class="hold-transition sidebar-mini text-sm layout-fixed layout-navbar-fixed layout-footer-fixed ">
+    <link href="<%= RutaDominio %>/Plugins/plantilla/animate/animate.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/fontawesome-pro/css/all.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/adminLTE/css/adminlte.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/select2/select2.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/dataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/dataTables/css/buttons.bootstrap.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/dataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/bootstrap-datepicker/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/dateRangePicker/daterangepicker.css" rel="stylesheet" />
+    <link href="<%= RutaDominio %>/Plugins/plantilla/Personalizado/estilos.css" rel="stylesheet" />
+    <script src="<%= RutaDominio %>/Plugins/plantilla/jquery/jquery.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/adminLTE/js/adminlte.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/moment/moment.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dataTables/jquery.dataTables.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dataTables/dataTables.buttons.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dataTables/buttons.bootstrap.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dataTables/buttons.html5.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dataTables/buttons.colVis.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/loading/loadingoverlay.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/dateRangePicker/daterangepicker.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/select2/select2.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/fileInput/bs-custom-file-input.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/inputMask/jquery.inputmask.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/sweetAlert/sweetalert2.all.min.js"></script>
+    <script src="<%= RutaDominio %>/Plugins/plantilla/Personalizado/scripts.js"></script>
+    <style>
+        .imgLoading {
+            background-image: url("<%= RutaDominio %>/Plugins/img/logo-univida.png");
+            background-repeat: no-repeat, repeat;
+            width: 80px;
+            height: 25px;
+            background-size: cover;
+            margin-left: 68px;
+        }
+    </style>
+    <form runat="server" autocomplete="off">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="wrapper">
+            <nav class="main-header navbar navbar-expand navbar-dark navbar-primary " id="navSuperior" runat="server">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="btnMenu" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="<%= RutaDominio %>/Default">
+                            <i class="fas fa-home" data-toggle="tooltip" title="Inicio"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalacercade">
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Acerca de"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalcontacto">
+                            <i class="fas fa-envelope" data-toggle="tooltip" title="Contacto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span runat="server" id="spnNombreCompleto"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="<%= RutaDominio %>/CambiarContrasena" class="dropdown-item">
+                                <i class="fas fa-key mr-2"></i>Cambio de contraseña
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="<%= RutaDominio %>/CerrarSesion" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt  mr-2"></i>Cerrar sesion
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <a href="#" class="brand-link logo-switch img-padre">
+                    <img src="<%= RutaDominio %>/Plugins/img/logo-cuadro.jpg" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
+                    <img src="<%= RutaDominio %>/Plugins/img/UNIVida.png" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl mx-auto d-block">
+                </a>
+                <div class="sidebar">
+                    <%@ Register Src="~/masterUsuarioMenu.ascx" TagPrefix="uc5" TagName="masterUsuarioMenu" %>
+                    <uc5:masterUsuarioMenu runat="server" ID="masterUsuarioMenu" />
+                    <%@ Register Src="~/masterMenu.ascx" TagPrefix="uc3" TagName="masterMenu" %>
+                    <uc3:masterMenu runat="server" ID="masterMenu" />
+                </div>
+            </aside>
+            <div class="content-wrapper" style="margin-bottom: -10px;padding-bottom:47px">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer class="main-footer" id="footer" runat="server">
+                <div class="text-center">
+                    &copy; <%: DateTime.Now.Year %> - Seguros y Reaseguros Personales UNIVIDA S. A.
+                </div>
+            </footer>
+            <aside class="control-sidebar control-sidebar-dark">
+            </aside>
+        </div>
+    </form>
+    <%@ Register Src="~/masterContacto.ascx" TagPrefix="uc4" TagName="masterContacto" %>
+    <uc4:masterContacto runat="server" ID="masterContacto" />
+    <%@ Register Src="~/masterAcercaDe.ascx" TagPrefix="uc5" TagName="masterAcercaDe" %>
+    <uc5:masterAcercaDe runat="server" ID="masterAcercaDe" />
+    <script>   
+        $(window).on('resize', function () {
+            sidebarCollapse();
+        });
+        function sidebarCollapse() {
+            setTimeout(() => {
+                if ($("body").hasClass("sidebar-collapse")) {
+                    $(".user-panel").hide();
+                }
+                else {
+                    setTimeout(() => {
+                        $(".user-panel").show();
+                    }, 10)
+                }
+            }, 50)
+        }
+        $("#btnMenu").on("click", function () {
+            sidebarCollapse();
+        })
+    </script>
+</body>
+</html>

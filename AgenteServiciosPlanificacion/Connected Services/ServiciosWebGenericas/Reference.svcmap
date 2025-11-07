@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="20bcf738-dc86-4796-a2dc-45292f346e35" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiciosWebGenericasManager.xsd" MetadataType="Schema" ID="8648e6aa-6bd2-4e9c-b6e6-52f0698ee187" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiciosWebGenericasManager1.xsd" MetadataType="Schema" ID="0843112a-01aa-4369-a313-44c08f839973" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiciosWebGenericasManager.disco" MetadataType="Disco" ID="8bced1a1-1082-444f-9883-1f3faef13dd0" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?disco" />
+    <MetadataFile FileName="ServiciosWebGenericasManager2.xsd" MetadataType="Schema" ID="2c0f33e0-d8a7-4ac9-8ccf-6f6fcfbf7e45" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiciosWebGenericasManager.wsdl" MetadataType="Wsdl" ID="866b718b-c4d7-439a-9471-0f7950f1b9ea" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?wsdl" />
+    <MetadataFile FileName="ServiciosWebGenericasManager3.xsd" MetadataType="Schema" ID="cda8baf5-c5da-4ab6-b718-1da77c483a1d" SourceId="1" SourceUrl="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

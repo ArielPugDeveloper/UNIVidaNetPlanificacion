@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Resultado" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Resultado" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CResultadoArrayByte">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoArrayByte" nillable="true" type="tns:CResultadoArrayByte" />
+  <xs:complexType name="CResultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Excepcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="OrdenRetorno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CResultado" nillable="true" type="tns:CResultado" />
+  <xs:complexType name="CResultadoDateTime">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoDateTime" nillable="true" type="tns:CResultadoDateTime" />
+  <xs:complexType name="CResultadoDecimal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoDecimal" nillable="true" type="tns:CResultadoDecimal" />
+  <xs:complexType name="CResultadoInt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoInt" nillable="true" type="tns:CResultadoInt" />
+  <xs:complexType name="CResultadoJsonDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoJsonDocument" nillable="true" type="tns:CResultadoJsonDocument" />
+  <xs:complexType name="CResultadoString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoString" nillable="true" type="tns:CResultadoString" />
+  <xs:complexType name="CResultadoXmlDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CResultado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Resultado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CResultadoXmlDocument" nillable="true" type="tns:CResultadoXmlDocument" />
+</xs:schema>

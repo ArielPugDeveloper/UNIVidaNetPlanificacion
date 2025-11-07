@@ -1,0 +1,998 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D273022F-93C9-48E1-9E43-DE95752C5D6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UNIVidaNetPlanificacion</RootNamespace>
+    <AssemblyName>UNIVidaNetPlanificacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44319</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=8.1.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.8.1.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\instalador2\microsoft.reportingservices.reportviewercontrol.webforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\instalador2\microsoft.reportingservices.reportviewercontrol.webforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\instalador2\microsoft.reportingservices.reportviewercontrol.webforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\instalador2\microsoft.reportingservices.reportviewercontrol.webforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\instalador1\microsoft.sqlserver.types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="UVNetDTOs, Version=1.1.4.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UVNetDTOs.1.1.4.6\lib\net462\UVNetDTOs.dll</HintPath>
+    </Reference>
+    <Reference Include="UVNetExtensiones, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UVNetExtensiones.1.0.0.1\lib\net462\UVNetExtensiones.dll</HintPath>
+    </Reference>
+    <Reference Include="UVNetTransversal, Version=1.6.3.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UVNetTransversal.1.6.3.9\lib\net462\UVNetTransversal.dll</HintPath>
+    </Reference>
+    <Reference Include="UVNetUtilitarios, Version=1.0.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UVNetUtilitarios.1.0.1.2\lib\net462\UVNetUtilitarios.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Autenticar.aspx" />
+    <Content Include="CambiarContrasena.aspx" />
+    <Content Include="CapturaErrores.aspx" />
+    <Content Include="CerrarSesion.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error404.aspx" />
+    <Content Include="Error500.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="masterAcercaDe.ascx" />
+    <Content Include="masterContacto.ascx" />
+    <Content Include="masterMenu.ascx" />
+    <Content Include="masterUsuarioMenu.ascx" />
+    <Content Include="Modulos\ProgramacionPEE\ucOpcionesRegistrosPEE.ascx" />
+    <Content Include="Modulos\ProgramacionPEE\ucBotonNuevoRegistro.ascx" />
+    <Content Include="Modulos\ProgramacionPEE\wfInicio.aspx" />
+    <Content Include="Modulos\ProgramacionPEE\wfReportePEE.aspx" />
+    <Content Include="Modulos\ProgramacionPEE\wfSeguimientoPEE.aspx" />
+    <Content Include="Modulos\ProgramacionPEE\wfNuevoPEE.aspx" />
+    <Content Include="Modulos\ProgramacionPEE\wfRegistrosPEE.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\ucOpcionesRegistrosPOA.ascx" />
+    <Content Include="Modulos\ProgramacionPOA\ucParteSuperiorReprogramacionPOA.ascx" />
+    <Content Include="Modulos\ProgramacionPOA\ucBotonGenerarPOA.ascx" />
+    <Content Include="Modulos\ProgramacionPOA\wfProgramacionEncargadoPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfReprogramacionEncargadoSolicitudPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfReprogramacionSolicitudPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfProgramacionPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfNuevoPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfRegistrosPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfReprogramacionPOA.aspx" />
+    <Content Include="Modulos\ProgramacionPOA\wfRevisionPOA.aspx" />
+    <Content Include="Modulos\Prueba\wfPrueba.aspx" />
+    <Content Include="Modulos\SeguimientoPOA\wfInstrucciones.aspx" />
+    <Content Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPEE.aspx" />
+    <Content Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPOA.aspx" />
+    <Content Include="Modulos\SeguimientoPOA\wfSeguimientoEncargadoPOA.aspx" />
+    <Content Include="Modulos\SeguimientoPOA\wfSeguimientoPOA.aspx" />
+    <Content Include="Modulos\SimulacionUsuarios\ucSeleccionarUsuario.ascx" />
+    <Content Include="Modulos\SimulacionUsuarios\wfSeleccionarUsuario.aspx" />
+    <Content Include="Plugins\img\borde.jpg" />
+    <Content Include="Plugins\img\linea.jpg" />
+    <Content Include="Plugins\img\logo-cuadro.jpg" />
+    <Content Include="Plugins\img\logo-univida.png" />
+    <Content Include="Plugins\img\logo.jpg" />
+    <Content Include="Plugins\img\logo1.jpg" />
+    <Content Include="Plugins\img\logoesquina.png" />
+    <Content Include="Plugins\img\logoesquina2.png" />
+    <Content Include="Plugins\img\logo_univida.jpg" />
+    <Content Include="Plugins\img\univida.png" />
+    <Content Include="Plugins\img\UNIVidaNetAuditoria.jpg" />
+    <Content Include="Plugins\img\UNIVidaNetAuditoria_mini.jpg" />
+    <Content Include="Plugins\img\user2-160x160.jpg" />
+    <Content Include="Plugins\plantilla\personalizado\scripts.js" />
+    <Content Include="Plugins\plantilla\adminLTE\css\adminlte.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\adminlte.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.components.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.components.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.core.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.core.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.extra-components.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.pages.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.pages.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.plugins.css" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Plugins\plantilla\adminLTE\js\adminlte.js" />
+    <Content Include="Plugins\plantilla\adminLTE\js\adminlte.min.js" />
+    <Content Include="Plugins\plantilla\animate\animate.css" />
+    <Content Include="Plugins\plantilla\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="Plugins\plantilla\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Plugins\plantilla\bootstrap-datepicker\bootstrap-datepicker3.min.css" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.js" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.bootstrap.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.bootstrap4.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.foundation.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.foundation.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.jqueryui.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.semanticui.js" />
+    <Content Include="Plugins\plantilla\dataTables\autoFill.semanticui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.bootstrap.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.bootstrap.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.bootstrap4.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.colVis.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.colVis.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.flash.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.flash.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.foundation.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.foundation.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.html5.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.html5.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.jqueryui.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.jqueryui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.print.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.print.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.semanticui.js" />
+    <Content Include="Plugins\plantilla\dataTables\buttons.semanticui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.material.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.material.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.uikit.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\jquery.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.bootstrap.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.bootstrap.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.bootstrap4.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.dataTables.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.dataTables.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.foundation.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.foundation.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.jqueryui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.jqueryui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.semanticui.css" />
+    <Content Include="Plugins\plantilla\dataTables\css\select.semanticui.min.css" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.autoFill.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.autoFill.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.bootstrap4.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.buttons.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.buttons.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.colReorder.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.colReorder.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.fixedColumns.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.fixedHeader.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.foundation.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.foundation.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.jqueryui.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.keyTable.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.keyTable.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.material.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.material.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.responsive.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.responsive.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.rowGroup.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.rowReorder.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.scroller.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.scroller.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.select.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.select.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.semanticui.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.semanticui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.uikit.js" />
+    <Content Include="Plugins\plantilla\dataTables\dataTables.uikit.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\images\details_close.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\details_open.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\sort_asc.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\sort_asc_disabled.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\sort_both.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\sort_desc.png" />
+    <Content Include="Plugins\plantilla\dataTables\images\sort_desc_disabled.png" />
+    <Content Include="Plugins\plantilla\dataTables\jquery.dataTables.js" />
+    <Content Include="Plugins\plantilla\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.bootstrap.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.bootstrap.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.bootstrap4.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.foundation.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.foundation.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.jqueryui.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.jqueryui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.semanticui.js" />
+    <Content Include="Plugins\plantilla\dataTables\responsive.semanticui.min.js" />
+    <Content Include="Plugins\plantilla\dataTables\swf\flashExport.swf" />
+    <Content Include="Plugins\plantilla\dateRangePicker\daterangepicker.css" />
+    <Content Include="Plugins\plantilla\dateRangePicker\daterangepicker.js" />
+    <Content Include="Plugins\plantilla\dateRangePicker\daterangepicker.min.js" />
+    <Content Include="Plugins\plantilla\fileInput\bs-custom-file-input.min.js" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\all.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\all.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\brands.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\brands.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\duotone.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\duotone.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\fontawesome.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\fontawesome.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\light.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\light.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\regular.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\regular.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\solid.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\solid.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\svg-with-js.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\svg-with-js.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\v4-shims.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\css\v4-shims.min.css" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-brands-400.svg" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-duotone-900.svg" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-light-300.svg" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-regular-400.svg" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-solid-900.svg" />
+    <Content Include="Plugins\plantilla\inputMask\jquery.inputmask.min.js" />
+    <Content Include="Plugins\plantilla\jquery\jquery.min.js" />
+    <Content Include="Plugins\plantilla\loading\loadingoverlay.min.js" />
+    <Content Include="Plugins\plantilla\moment\moment.min.js" />
+    <Content Include="Plugins\plantilla\personalizado\estilos.css" />
+    <Content Include="Plugins\plantilla\select2\select2.min.css" />
+    <Content Include="Plugins\plantilla\select2\select2.min.js" />
+    <Content Include="Plugins\plantilla\sweetAlert\sweetalert2.all.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="Version.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Autenticar.aspx.cs">
+      <DependentUpon>Autenticar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autenticar.aspx.designer.cs">
+      <DependentUpon>Autenticar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContrasena.aspx.cs">
+      <DependentUpon>CambiarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambiarContrasena.aspx.designer.cs">
+      <DependentUpon>CambiarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaErrores.aspx.cs">
+      <DependentUpon>CapturaErrores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapturaErrores.aspx.designer.cs">
+      <DependentUpon>CapturaErrores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error500.aspx.cs">
+      <DependentUpon>Error500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error500.aspx.designer.cs">
+      <DependentUpon>Error500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="masterAcercaDe.ascx.cs">
+      <DependentUpon>masterAcercaDe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterAcercaDe.ascx.designer.cs">
+      <DependentUpon>masterAcercaDe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="masterContacto.ascx.cs">
+      <DependentUpon>masterContacto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterContacto.ascx.designer.cs">
+      <DependentUpon>masterContacto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="masterMenu.ascx.cs">
+      <DependentUpon>masterMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterMenu.ascx.designer.cs">
+      <DependentUpon>masterMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="masterUsuarioMenu.ascx.cs">
+      <DependentUpon>masterUsuarioMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterUsuarioMenu.ascx.designer.cs">
+      <DependentUpon>masterUsuarioMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\dsPlanEstrategicoEmpresarial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPlanEstrategicoEmpresarial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\ucOpcionesRegistrosPEE.ascx.cs">
+      <DependentUpon>ucOpcionesRegistrosPEE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\ucOpcionesRegistrosPEE.ascx.designer.cs">
+      <DependentUpon>ucOpcionesRegistrosPEE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\ucBotonNuevoRegistro.ascx.cs">
+      <DependentUpon>ucBotonNuevoRegistro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\ucBotonNuevoRegistro.ascx.designer.cs">
+      <DependentUpon>ucBotonNuevoRegistro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfInicio.aspx.cs">
+      <DependentUpon>wfInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfInicio.aspx.designer.cs">
+      <DependentUpon>wfInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfReportePEE.aspx.cs">
+      <DependentUpon>wfReportePEE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfReportePEE.aspx.designer.cs">
+      <DependentUpon>wfReportePEE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfSeguimientoPEE.aspx.cs">
+      <DependentUpon>wfSeguimientoPEE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfSeguimientoPEE.aspx.designer.cs">
+      <DependentUpon>wfSeguimientoPEE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfNuevoPEE.aspx.cs">
+      <DependentUpon>wfNuevoPEE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfNuevoPEE.aspx.designer.cs">
+      <DependentUpon>wfNuevoPEE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfRegistrosPEE.aspx.cs">
+      <DependentUpon>wfRegistrosPEE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPEE\wfRegistrosPEE.aspx.designer.cs">
+      <DependentUpon>wfRegistrosPEE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucOpcionesRegistrosPOA.ascx.cs">
+      <DependentUpon>ucOpcionesRegistrosPOA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucOpcionesRegistrosPOA.ascx.designer.cs">
+      <DependentUpon>ucOpcionesRegistrosPOA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucParteSuperiorReprogramacionPOA.ascx.cs">
+      <DependentUpon>ucParteSuperiorReprogramacionPOA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucParteSuperiorReprogramacionPOA.ascx.designer.cs">
+      <DependentUpon>ucParteSuperiorReprogramacionPOA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucBotonGenerarPOA.ascx.cs">
+      <DependentUpon>ucBotonGenerarPOA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\ucBotonGenerarPOA.ascx.designer.cs">
+      <DependentUpon>ucBotonGenerarPOA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfProgramacionEncargadoPOA.aspx.cs">
+      <DependentUpon>wfProgramacionEncargadoPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfProgramacionEncargadoPOA.aspx.designer.cs">
+      <DependentUpon>wfProgramacionEncargadoPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionEncargadoSolicitudPOA.aspx.cs">
+      <DependentUpon>wfReprogramacionEncargadoSolicitudPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionEncargadoSolicitudPOA.aspx.designer.cs">
+      <DependentUpon>wfReprogramacionEncargadoSolicitudPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionSolicitudPOA.aspx.cs">
+      <DependentUpon>wfReprogramacionSolicitudPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionSolicitudPOA.aspx.designer.cs">
+      <DependentUpon>wfReprogramacionSolicitudPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfProgramacionPOA.aspx.cs">
+      <DependentUpon>wfProgramacionPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfProgramacionPOA.aspx.designer.cs">
+      <DependentUpon>wfProgramacionPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfNuevoPOA.aspx.cs">
+      <DependentUpon>wfNuevoPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfNuevoPOA.aspx.designer.cs">
+      <DependentUpon>wfNuevoPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfRegistrosPOA.aspx.cs">
+      <DependentUpon>wfRegistrosPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfRegistrosPOA.aspx.designer.cs">
+      <DependentUpon>wfRegistrosPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionPOA.aspx.cs">
+      <DependentUpon>wfReprogramacionPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfReprogramacionPOA.aspx.designer.cs">
+      <DependentUpon>wfReprogramacionPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfRevisionPOA.aspx.cs">
+      <DependentUpon>wfRevisionPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProgramacionPOA\wfRevisionPOA.aspx.designer.cs">
+      <DependentUpon>wfRevisionPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Prueba\wfPrueba.aspx.cs">
+      <DependentUpon>wfPrueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Prueba\wfPrueba.aspx.designer.cs">
+      <DependentUpon>wfPrueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstrucciones.aspx.cs">
+      <DependentUpon>wfInstrucciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstrucciones.aspx.designer.cs">
+      <DependentUpon>wfInstrucciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPEE.aspx.cs">
+      <DependentUpon>wfInstruccionSeguimientoPEE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPEE.aspx.designer.cs">
+      <DependentUpon>wfInstruccionSeguimientoPEE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPOA.aspx.cs">
+      <DependentUpon>wfInstruccionSeguimientoPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfInstruccionSeguimientoPOA.aspx.designer.cs">
+      <DependentUpon>wfInstruccionSeguimientoPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfSeguimientoEncargadoPOA.aspx.cs">
+      <DependentUpon>wfSeguimientoEncargadoPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfSeguimientoEncargadoPOA.aspx.designer.cs">
+      <DependentUpon>wfSeguimientoEncargadoPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfSeguimientoPOA.aspx.cs">
+      <DependentUpon>wfSeguimientoPOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SeguimientoPOA\wfSeguimientoPOA.aspx.designer.cs">
+      <DependentUpon>wfSeguimientoPOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SimulacionUsuarios\ucSeleccionarUsuario.ascx.cs">
+      <DependentUpon>ucSeleccionarUsuario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SimulacionUsuarios\ucSeleccionarUsuario.ascx.designer.cs">
+      <DependentUpon>ucSeleccionarUsuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\SimulacionUsuarios\wfSeleccionarUsuario.aspx.cs">
+      <DependentUpon>wfSeleccionarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\SimulacionUsuarios\wfSeleccionarUsuario.aspx.designer.cs">
+      <DependentUpon>wfSeleccionarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\Carga\CCargaContenido.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\ExcelAList\CContenidoXls.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\ExcelAList\CExcelAList.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\ExcelAList\CExcelMap.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\ExcelAList\CResultadoList.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\Interfaces\ICargaContenidoAgente.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\Interfaces\ITipoContenido.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\MapeoExcel\CAseguradoExcelCuestionario.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\MapeoExcel\CAseguradoExcelEnlatado.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\MapeoExcel\CClienteResumido.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\MapeoExcel\CIndicadoresPEE.cs" />
+    <Compile Include="Parametrizacion\CargaArchivos\CargaArchivos\MapeoExcel\CIndicadoresPOA.cs" />
+    <Compile Include="Parametrizacion\CGestionPermisos.cs" />
+    <Compile Include="Parametrizacion\CTiposUsuario.cs" />
+    <Compile Include="Parametrizacion\CVariableSesion.cs" />
+    <Compile Include="Parametrizacion\CVariableURL.cs" />
+    <Compile Include="Parametrizacion\CWebControlGenerico.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\CWebFormGenerico.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\MasterUD.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Version.aspx.cs">
+      <DependentUpon>Version.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Version.aspx.designer.cs">
+      <DependentUpon>Version.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgenteServiciosPlanificacion\AgenteServiciosPlanificacion.csproj">
+      <Project>{4233D3E6-E13C-4982-862B-2C855611DF95}</Project>
+      <Name>AgenteServiciosPlanificacion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login.Master" />
+    <Content Include="Modulos\ProgramacionPEE\dsPlanEstrategicoEmpresarial.xsc">
+      <DependentUpon>dsPlanEstrategicoEmpresarial.xsd</DependentUpon>
+    </Content>
+    <None Include="Modulos\ProgramacionPEE\dsPlanEstrategicoEmpresarial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPlanEstrategicoEmpresarial.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Modulos\ProgramacionPEE\dsPlanEstrategicoEmpresarial.xss">
+      <DependentUpon>dsPlanEstrategicoEmpresarial.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Plugins\plantilla\adminLTE\css\adminlte.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\adminlte.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.components.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.components.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.core.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.core.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.pages.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.plugins.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="Plugins\plantilla\adminLTE\js\adminlte.js.map" />
+    <Content Include="Plugins\plantilla\adminLTE\js\adminlte.min.js.map" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Plugins\plantilla\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-brands-400.eot" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-brands-400.ttf" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-brands-400.woff" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-brands-400.woff2" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-duotone-900.eot" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-duotone-900.ttf" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-duotone-900.woff" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-duotone-900.woff2" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-light-300.eot" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-light-300.ttf" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-light-300.woff" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-light-300.woff2" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-regular-400.eot" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-regular-400.ttf" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-regular-400.woff" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-regular-400.woff2" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-solid-900.eot" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-solid-900.ttf" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-solid-900.woff" />
+    <Content Include="Plugins\plantilla\fontawesome-pro\webfonts\fa-solid-900.woff2" />
+    <Content Include="Plugins\plantilla\dataTables\css\common.scss" />
+    <Content Include="Plugins\plantilla\dataTables\css\mixins.scss" />
+    <Content Include="Plugins\plantilla\dataTables\css\semanticui.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Modulos\Reportes\rptPEE.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != '' And Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' == '' Or !Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64249</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44344/UNIVidaNetPlanificacion</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

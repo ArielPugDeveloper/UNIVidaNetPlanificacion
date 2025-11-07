@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciosWebGenericasManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Parametro" />
+      <xsd:import schemaLocation="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Resultado" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPArrayByte_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPArrayByte" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPArrayByte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPArrayByteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPDecimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPDecimal" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPDecimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPDecimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPInt" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPInt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPJsonDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPJsonDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPJsonDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPJsonDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPString_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPString" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPXmlDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPXmlDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWebGenericasManager_EjecutarSPXmlDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EjecutarSPXmlDocumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciosWebGenericasManager">
+    <wsdl:operation name="EjecutarSPArrayByte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPArrayByte" message="tns:IServiciosWebGenericasManager_EjecutarSPArrayByte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPArrayByteResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPArrayByte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDateTime" message="tns:IServiciosWebGenericasManager_EjecutarSPDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDateTimeResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPDecimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDecimal" message="tns:IServiciosWebGenericasManager_EjecutarSPDecimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDecimalResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPDecimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPInt" message="tns:IServiciosWebGenericasManager_EjecutarSPInt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPIntResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPInt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPJsonDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPJsonDocument" message="tns:IServiciosWebGenericasManager_EjecutarSPJsonDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPJsonDocumentResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPJsonDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPString" message="tns:IServiciosWebGenericasManager_EjecutarSPString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPStringResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPXmlDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPXmlDocument" message="tns:IServiciosWebGenericasManager_EjecutarSPXmlDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPXmlDocumentResponse" message="tns:IServiciosWebGenericasManager_EjecutarSPXmlDocument_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiciosWebGenericasManager" type="tns:IServiciosWebGenericasManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EjecutarSPArrayByte">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPArrayByte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPDateTime">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPDecimal">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPDecimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPInt">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPJsonDocument">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPJsonDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPString">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarSPXmlDocument">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWebGenericasManager/EjecutarSPXmlDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosWebGenericasManager">
+    <wsdl:port name="BasicHttpBinding_IServiciosWebGenericasManager" binding="tns:BasicHttpBinding_IServiciosWebGenericasManager">
+      <soap:address location="http://ws-desarrollo/ServiciosWebGenericasSqlServer/ServiciosWebGenericasManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

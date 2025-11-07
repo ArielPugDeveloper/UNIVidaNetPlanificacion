@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Parametro" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UVNetDTOs.DTOsGenericas.Parametro" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCEParametros">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEParametros" nillable="true" type="tns:CEParametros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEParametros" nillable="true" type="tns:ArrayOfCEParametros" />
+  <xs:complexType name="CEParametros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProcedimientoAlmacenado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lParametroArrayByte" nillable="true" type="tns:ArrayOfCParametroArrayByte" />
+      <xs:element minOccurs="0" name="lParametroBool" nillable="true" type="tns:ArrayOfCParametroBool" />
+      <xs:element minOccurs="0" name="lParametroDateTime" nillable="true" type="tns:ArrayOfCParametroDateTime" />
+      <xs:element minOccurs="0" name="lParametroDecimal" nillable="true" type="tns:ArrayOfCParametroDecimal" />
+      <xs:element minOccurs="0" name="lParametroInt" nillable="true" type="tns:ArrayOfCParametroInt" />
+      <xs:element minOccurs="0" name="lParametroJsonDocument" nillable="true" type="tns:ArrayOfCParametroJsonDocument" />
+      <xs:element minOccurs="0" name="lParametroString" nillable="true" type="tns:ArrayOfCParametroString" />
+      <xs:element minOccurs="0" name="lParametroXmlDocument" nillable="true" type="tns:ArrayOfCParametroXmlDocument" />
+      <xs:element minOccurs="0" name="oRequestDatosCliente" nillable="true" type="tns:CRequestDatosCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEParametros" nillable="true" type="tns:CEParametros" />
+  <xs:complexType name="ArrayOfCParametroArrayByte">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroArrayByte" nillable="true" type="tns:CParametroArrayByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroArrayByte" nillable="true" type="tns:ArrayOfCParametroArrayByte" />
+  <xs:complexType name="CParametroArrayByte">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroArrayByte" nillable="true" type="tns:CParametroArrayByte" />
+  <xs:complexType name="CParametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreParametro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PosicionParametro" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CParametro" nillable="true" type="tns:CParametro" />
+  <xs:complexType name="ArrayOfCParametroBool">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroBool" nillable="true" type="tns:CParametroBool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroBool" nillable="true" type="tns:ArrayOfCParametroBool" />
+  <xs:complexType name="CParametroBool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroBool" nillable="true" type="tns:CParametroBool" />
+  <xs:complexType name="ArrayOfCParametroDateTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroDateTime" nillable="true" type="tns:CParametroDateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroDateTime" nillable="true" type="tns:ArrayOfCParametroDateTime" />
+  <xs:complexType name="CParametroDateTime">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroDateTime" nillable="true" type="tns:CParametroDateTime" />
+  <xs:complexType name="ArrayOfCParametroDecimal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroDecimal" nillable="true" type="tns:CParametroDecimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroDecimal" nillable="true" type="tns:ArrayOfCParametroDecimal" />
+  <xs:complexType name="CParametroDecimal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroDecimal" nillable="true" type="tns:CParametroDecimal" />
+  <xs:complexType name="ArrayOfCParametroInt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroInt" nillable="true" type="tns:CParametroInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroInt" nillable="true" type="tns:ArrayOfCParametroInt" />
+  <xs:complexType name="CParametroInt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroInt" nillable="true" type="tns:CParametroInt" />
+  <xs:complexType name="ArrayOfCParametroJsonDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroJsonDocument" nillable="true" type="tns:CParametroJsonDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroJsonDocument" nillable="true" type="tns:ArrayOfCParametroJsonDocument" />
+  <xs:complexType name="CParametroJsonDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroJsonDocument" nillable="true" type="tns:CParametroJsonDocument" />
+  <xs:complexType name="ArrayOfCParametroString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroString" nillable="true" type="tns:CParametroString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroString" nillable="true" type="tns:ArrayOfCParametroString" />
+  <xs:complexType name="CParametroString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroString" nillable="true" type="tns:CParametroString" />
+  <xs:complexType name="ArrayOfCParametroXmlDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CParametroXmlDocument" nillable="true" type="tns:CParametroXmlDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCParametroXmlDocument" nillable="true" type="tns:ArrayOfCParametroXmlDocument" />
+  <xs:complexType name="CParametroXmlDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CParametro">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValorParametro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CParametroXmlDocument" nillable="true" type="tns:CParametroXmlDocument" />
+  <xs:complexType name="CRequestDatosCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HttpMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserHostAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserHostName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRequestDatosCliente" nillable="true" type="tns:CRequestDatosCliente" />
+</xs:schema>
